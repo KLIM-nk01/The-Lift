@@ -1,0 +1,54 @@
+D:\TheLift\LiftModel\bin\Debug\LiftModel.dll
+D:\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+D:\TheLift\LiftModel\obj\Debug\LiftModel.csproj.CoreCompileInputs.cache
+D:\TheLift\LiftModel\obj\Debug\LiftModel.dll
+D:\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+D:\TheLift\LiftModel\obj\Debug\LiftModel.csprojResolveAssemblyReference.cache
+F:\TheLift\LiftModel\obj\Debug\LiftModel.csprojResolveAssemblyReference.cache
+F:\TheLift\LiftModel\obj\Debug\LiftModel.dll
+F:\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+F:\TheLift\LiftModel\bin\Debug\LiftModel.dll
+F:\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+C:\Users\User\Desktop\TheLift\LiftModel\bin\Debug\LiftModel.dll
+C:\Users\User\Desktop\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+C:\Users\User\Desktop\TheLift\LiftModel\obj\Debug\LiftModel.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\TheLift\LiftModel\obj\Debug\LiftModel.dll
+C:\Users\User\Desktop\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+C:\Users\User\Desktop\ТП\TheLift\LiftModel\bin\Debug\LiftModel.dll
+C:\Users\User\Desktop\ТП\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+C:\Users\User\Desktop\ТП\TheLift\LiftModel\obj\Debug\LiftModel.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\ТП\TheLift\LiftModel\obj\Debug\LiftModel.dll
+C:\Users\User\Desktop\ТП\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+D:\РАФ, 3 курс\ТП\TheLift\LiftModel\bin\Debug\LiftModel.dll
+D:\РАФ, 3 курс\ТП\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+D:\РАФ, 3 курс\ТП\TheLift\LiftModel\obj\Debug\LiftModel.csprojAssemblyReference.cache
+D:\РАФ, 3 курс\ТП\TheLift\LiftModel\obj\Debug\LiftModel.csproj.CoreCompileInputs.cache
+D:\РАФ, 3 курс\ТП\TheLift\LiftModel\obj\Debug\LiftModel.dll
+D:\РАФ, 3 курс\ТП\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+D:\Programming\TP\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.csproj.CoreCompileInputs.cache
+D:\Programming\TP\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.dll
+D:\Programming\TP\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+D:\Programming\TP\проект тп\TheLift\LiftModel\bin\Debug\LiftModel.dll
+D:\Programming\TP\проект тп\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+D:\Programming\TP\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.csproj.ResolveComReference.cache
+D:\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.csproj.ResolveComReference.cache
+D:\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.csproj.CoreCompileInputs.cache
+D:\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.dll
+D:\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.pdb
+D:\проект тп\TheLift\LiftModel\obj\Debug\LiftModel.csprojAssemblyReference.cache
+D:\проект тп\TheLift\LiftModel\bin\Debug\LiftModel.dll
+D:\проект тп\TheLift\LiftModel\bin\Debug\LiftModel.pdb
+D:\Техпрог2\The_Lift_Final\LiftModel\bin\Debug\LiftModel.dll
+D:\Техпрог2\The_Lift_Final\LiftModel\bin\Debug\LiftModel.pdb
+D:\Техпрог2\The_Lift_Final\LiftModel\obj\Debug\LiftModel.csprojAssemblyReference.cache
+D:\Техпрог2\The_Lift_Final\LiftModel\obj\Debug\LiftModel.csproj.ResolveComReference.cache
+D:\Техпрог2\The_Lift_Final\LiftModel\obj\Debug\LiftModel.csproj.CoreCompileInputs.cache
+D:\Техпрог2\The_Lift_Final\LiftModel\obj\Debug\LiftModel.dll
+D:\Техпрог2\The_Lift_Final\LiftModel\obj\Debug\LiftModel.pdb
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\bin\Debug\LiftModel.dll
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\bin\Debug\LiftModel.pdb
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\obj\Debug\LiftModel.csprojAssemblyReference.cache
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\obj\Debug\LiftModel.csproj.ResolveComReference.cache
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\obj\Debug\LiftModel.csproj.CoreCompileInputs.cache
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\obj\Debug\LiftModel.dll
+D:\Техпрог2\The_Lift_Final(готов)\LiftModel\obj\Debug\LiftModel.pdb
