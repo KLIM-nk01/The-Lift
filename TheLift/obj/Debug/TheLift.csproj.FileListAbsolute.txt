@@ -136,3 +136,4 @@ D:\Техпрог2\The_Lift_Final(готов)\TheLift\bin\Debug\TheLift.pdb
 D:\Техпрог2\The_Lift_Final(готов)\TheLift\bin\Debug\LiftModel.dll
 D:\Техпрог2\The_Lift_Final(готов)\TheLift\bin\Debug\LiftModel.pdb
 D:\Техпрог2\The_Lift_Final(готов)\TheLift\obj\Debug\TheLift.csproj.CopyComplete
+D:\Техпрог2\The_Lift_Final(готов)\TheLift\obj\Debug\TheLift.Dialogs.FormTrevoga.resources

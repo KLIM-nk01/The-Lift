@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLift));
             this.TableButtons = new System.Windows.Forms.CheckedListBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.tsslPeople = new System.Windows.Forms.ToolStripStatusLabel();
             this.timerLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,7 +114,7 @@
             this.TableButtons.Location = new System.Drawing.Point(11, 31);
             this.TableButtons.Name = "TableButtons";
             this.TableButtons.ScrollAlwaysVisible = true;
-            this.TableButtons.Size = new System.Drawing.Size(178, 270);
+            this.TableButtons.Size = new System.Drawing.Size(178, 175);
             this.TableButtons.TabIndex = 1;
             // 
             // splitContainer1
@@ -140,9 +140,20 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1211, 561);
-            this.splitContainer1.SplitterDistance = 68;
+            this.splitContainer1.Size = new System.Drawing.Size(1200, 561);
+            this.splitContainer1.SplitterDistance = 78;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(623, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(230, 32);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Пожарная тревога";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -154,6 +165,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Показать статистику";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -198,7 +210,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1211, 489);
+            this.panel1.Size = new System.Drawing.Size(1200, 479);
             this.panel1.TabIndex = 4;
             // 
             // panel8
@@ -207,7 +219,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1211, 456);
+            this.panel8.Size = new System.Drawing.Size(1200, 446);
             this.panel8.TabIndex = 1;
             // 
             // splitContainer2
@@ -230,9 +242,10 @@
             this.splitContainer2.Panel2.Controls.Add(this.label9);
             this.splitContainer2.Panel2.Controls.Add(this.lbHistory);
             this.splitContainer2.Panel2.ForeColor = System.Drawing.Color.White;
-            this.splitContainer2.Size = new System.Drawing.Size(1211, 456);
-            this.splitContainer2.SplitterDistance = 910;
+            this.splitContainer2.Size = new System.Drawing.Size(1200, 446);
+            this.splitContainer2.SplitterDistance = 900;
             this.splitContainer2.TabIndex = 2;
+            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
             // splitContainer3
             // 
@@ -251,8 +264,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.panel4);
-            this.splitContainer3.Size = new System.Drawing.Size(910, 456);
-            this.splitContainer3.SplitterDistance = 352;
+            this.splitContainer3.Size = new System.Drawing.Size(900, 446);
+            this.splitContainer3.SplitterDistance = 347;
             this.splitContainer3.TabIndex = 15;
             // 
             // lbQueue
@@ -265,7 +278,7 @@
             this.lbQueue.ItemHeight = 18;
             this.lbQueue.Location = new System.Drawing.Point(17, 236);
             this.lbQueue.Name = "lbQueue";
-            this.lbQueue.Size = new System.Drawing.Size(319, 76);
+            this.lbQueue.Size = new System.Drawing.Size(314, 4);
             this.lbQueue.TabIndex = 13;
             // 
             // groupBox1
@@ -296,6 +309,7 @@
             this.btnCreatePerson.TabIndex = 7;
             this.btnCreatePerson.Text = "Применить";
             this.btnCreatePerson.UseVisualStyleBackColor = true;
+            this.btnCreatePerson.Click += new System.EventHandler(this.btnCreatePerson_Click);
             // 
             // nudTargetFloor
             // 
@@ -400,7 +414,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(554, 456);
+            this.panel4.Size = new System.Drawing.Size(549, 446);
             this.panel4.TabIndex = 16;
             // 
             // panel5
@@ -410,7 +424,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(554, 456);
+            this.panel5.Size = new System.Drawing.Size(549, 446);
             this.panel5.TabIndex = 0;
             // 
             // panel6
@@ -425,7 +439,7 @@
             this.panel6.ForeColor = System.Drawing.Color.White;
             this.panel6.Location = new System.Drawing.Point(0, 73);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(554, 383);
+            this.panel6.Size = new System.Drawing.Size(549, 373);
             this.panel6.TabIndex = 16;
             // 
             // lbPessengers
@@ -438,7 +452,7 @@
             this.lbPessengers.ItemHeight = 18;
             this.lbPessengers.Location = new System.Drawing.Point(213, 31);
             this.lbPessengers.Name = "lbPessengers";
-            this.lbPessengers.Size = new System.Drawing.Size(327, 238);
+            this.lbPessengers.Size = new System.Drawing.Size(322, 148);
             this.lbPessengers.TabIndex = 14;
             // 
             // panel7
@@ -449,7 +463,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 383);
+            this.panel7.Size = new System.Drawing.Size(200, 373);
             this.panel7.TabIndex = 2;
             // 
             // pictureBox2
@@ -479,7 +493,7 @@
             // 
             this.txtWeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtWeight.Location = new System.Drawing.Point(347, 331);
+            this.txtWeight.Location = new System.Drawing.Point(347, 321);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.ReadOnly = true;
             this.txtWeight.Size = new System.Drawing.Size(88, 30);
@@ -495,6 +509,7 @@
             this.label7.Size = new System.Drawing.Size(119, 25);
             this.label7.TabIndex = 11;
             this.label7.Text = "Пассажиры";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label2
             // 
@@ -502,7 +517,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(279, 335);
+            this.label2.Location = new System.Drawing.Point(279, 326);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 25);
             this.label2.TabIndex = 4;
@@ -519,7 +534,7 @@
             this.panel3.ForeColor = System.Drawing.Color.White;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(554, 73);
+            this.panel3.Size = new System.Drawing.Size(549, 73);
             this.panel3.TabIndex = 15;
             // 
             // pictureBox1
@@ -571,7 +586,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(22, 365);
+            this.label11.Location = new System.Drawing.Point(12, 366);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(165, 25);
             this.label11.TabIndex = 15;
@@ -594,7 +609,7 @@
             this.TimePerFloorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TimePerFloorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TimePerFloorTextBox.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.TimePerFloorTextBox.Location = new System.Drawing.Point(27, 404);
+            this.TimePerFloorTextBox.Location = new System.Drawing.Point(27, 394);
             this.TimePerFloorTextBox.Name = "TimePerFloorTextBox";
             this.TimePerFloorTextBox.Size = new System.Drawing.Size(88, 30);
             this.TimePerFloorTextBox.TabIndex = 15;
@@ -604,11 +619,12 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(14, 8);
+            this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 25);
             this.label9.TabIndex = 15;
             this.label9.Text = "История";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // lbHistory
             // 
@@ -620,16 +636,16 @@
             this.lbHistory.ItemHeight = 18;
             this.lbHistory.Location = new System.Drawing.Point(17, 44);
             this.lbHistory.Name = "lbHistory";
-            this.lbHistory.Size = new System.Drawing.Size(264, 238);
+            this.lbHistory.Size = new System.Drawing.Size(261, 166);
             this.lbHistory.TabIndex = 14;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.statusStrip1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 456);
+            this.panel2.Location = new System.Drawing.Point(0, 446);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1211, 33);
+            this.panel2.Size = new System.Drawing.Size(1200, 33);
             this.panel2.TabIndex = 0;
             // 
             // statusStrip1
@@ -642,7 +658,7 @@
             this.timerLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1211, 33);
+            this.statusStrip1.Size = new System.Drawing.Size(1200, 33);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -667,23 +683,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button4
-            // 
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(623, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(230, 32);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Пожарная тревога";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // FrmLift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1211, 561);
+            this.ClientSize = new System.Drawing.Size(1200, 561);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

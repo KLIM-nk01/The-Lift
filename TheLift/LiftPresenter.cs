@@ -28,7 +28,8 @@ namespace TheLift
             View.btnControl.Click += BtnControl_Click;
             View.button1.Click += BtnCreateLift_Click;
             View.button2.Click += TsmiShowStat_Click;
-            View.button3.Click += TimePerFloor_Click;
+            View.button3.Click += TimePerFloor_Click; 
+            View.button4.Click += BtnTrevoga;
             View.TableButtons.Click += TableButtons_Click;
             View.FormClosing += View_FormClosing;
             //View.btnGo.Click += BtnGo_Click;
@@ -96,6 +97,11 @@ namespace TheLift
 
                 RefreshButtons();
             }
+        }
+        private void BtnTrevoga(object sender, EventArgs e)
+        {
+            Dialogs.FormTrevoga f = new Dialogs.FormTrevoga();
+            f.ShowDialog();
         }
 
         private void View_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)

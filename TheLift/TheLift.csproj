@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dialogs\CreateLiftPresenter.cs" />
+    <Compile Include="Dialogs\FormTrevoga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FormTrevoga.Designer.cs">
+      <DependentUpon>FormTrevoga.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiftPresenter.cs" />
     <Compile Include="Dialogs\FrmCreateLift.cs">
       <SubType>Form</SubType>
@@ -74,6 +80,9 @@
     <Compile Include="Dialogs\ILiftCreatable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\FormTrevoga.resx">
+      <DependentUpon>FormTrevoga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FrmCreateLift.resx">
       <DependentUpon>FrmCreateLift.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,7 +10,6 @@ namespace TheLift
     {
         
         public IPersonCreatable personCreatable;
-
         public bool IsActive = false;
 
         public FrmLift()
@@ -112,6 +111,31 @@ namespace TheLift
         }
 
         private void btnControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreatePerson_Click(object sender, EventArgs e)
         {
 
         }
