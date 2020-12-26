@@ -2,13 +2,17 @@
 using System.Drawing;
 using System.Windows.Forms;
 using LiftModel;
+using System.Collections.Generic;
 
 namespace TheLift
 {
     public partial class FrmCreateLift : Form
     {
         public Lift NewLift;
+        //public Lift NewLift2;
+        public List<Person> Queue { get; set; } = new List<Person>();
         public ILiftCreatable creatable;
+
 
         public FrmCreateLift()
         {
@@ -16,6 +20,7 @@ namespace TheLift
             creatable = new CreateLiftPresenter(this);
         }
 
+     
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

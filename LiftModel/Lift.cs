@@ -13,6 +13,9 @@ namespace LiftModel
         public int LimitWeight { get; set; } = 400;
 
         private int timeMoving = 1000;
+        public int trevoga = 0;
+        public int CurrentMin = 0;
+        public int CurrentSec = 0;
 
         public int GetTimeMoving()
         {
@@ -34,11 +37,14 @@ namespace LiftModel
 
         public List<Person> Pessengers { get; set; } = new List<Person>();
         public List<Person> Queue { get; set; } = new List<Person>();
+        public List<Person> Queue1 { get; set; } = new List<Person>();
         public int ActiveUsers => Pessengers.Count + Queue.Count; 
 
         public List<LiftButton> Buttons { get; set; } = new List<LiftButton>();
+   
 
         public List<Person> History { get; set; } = new List<Person>();
+        public List<Person> History2 { get; set; } = new List<Person>();
 
 
         public bool IsMove { get; set; } = false;
@@ -64,6 +70,16 @@ namespace LiftModel
             {
                 LiftButton lb = new LiftButton(i, false);
                 Buttons.Add(lb);
+            
+            }
+        }
+        public void TimerUpdate()
+        {
+            CurrentSec++;
+            if (CurrentSec > 60)
+            {
+                CurrentSec = 0;
+                CurrentMin++;
             }
         }
 
@@ -74,7 +90,7 @@ namespace LiftModel
             RefreshLiftButtons();
         }
 
-        private void RefreshLiftButtons()
+        public void RefreshLiftButtons()
         {
 
             foreach (LiftButton lbtn in Buttons)
@@ -99,11 +115,7 @@ namespace LiftModel
             }
         }
 
-
-        private void AddToPessengers(Person person)
-        {
-            Pessengers.Add(person);
-        }
+       
 
         private void Enter()
         {
@@ -111,6 +123,7 @@ namespace LiftModel
             CriticalPerson = Queue.FindAll(item => item.StartFloor == CurrentFloor);
             Pessengers.AddRange(CriticalPerson);
             Queue.RemoveAll(item => item.StartFloor == CurrentFloor);
+            
         }
 
         private void ExitFrom()
@@ -118,11 +131,13 @@ namespace LiftModel
             List<Person> CriticalPerson = new List<Person>();
             CriticalPerson = Pessengers.FindAll(item => item.TargetFloor == CurrentFloor);
             History.AddRange(CriticalPerson);
+            History2.AddRange(CriticalPerson);
             Pessengers.RemoveAll(item => item.TargetFloor == CurrentFloor);
         }
 
         private void Transfer()
         {
+
             if (Pessengers.FindAll(item => item.TargetFloor == CurrentFloor).Count + Queue.FindAll(item => item.StartFloor == CurrentFloor).Count > 0)
             {
                 ExitFrom();
@@ -137,6 +152,17 @@ namespace LiftModel
 
         public void Move()
         {
+            History.Clear();
+            if (trevoga == 1)
+            {
+                if (CurrentFloor > 1)
+                {
+                    LiftDirection = Direction.Down;
+                    Transfer();
+                }
+
+                return;
+            }
             if (ActiveUsers > 0)
             {
                 IsMove = true;
@@ -162,6 +188,7 @@ namespace LiftModel
             }
             else
             {
+
                 Wait();
             }
         }

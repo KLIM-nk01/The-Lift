@@ -26,6 +26,9 @@ namespace TheLift
         public void LiftCreate()
         {
             View.NewLift = new Lift(Convert.ToInt32(View.nudFloors.Value));
+        
+           // View.NewLift2 = new Lift(Convert.ToInt32(View.nudFloors.Value));
+           
         }
     }
 }

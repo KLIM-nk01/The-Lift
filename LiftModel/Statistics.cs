@@ -18,12 +18,12 @@ namespace LiftModel
 
         public string People()
         {
-            return Lifft.History.Count.ToString();
+            return Lifft.History2.Count.ToString();
         }
 
         public string ResultWeight()
         {
-            return Lifft.History.Sum(item => item.Weight).ToString();
+            return Lifft.History2.Sum(item => item.Weight).ToString();
         }
 
         public string AllTrips()

@@ -11,6 +11,7 @@ namespace TheLift
         
         public IPersonCreatable personCreatable;
         public bool IsActive = false;
+        public int Trevoga = 0;
 
         public FrmLift()
         {
@@ -136,6 +137,66 @@ namespace TheLift
         }
 
         private void btnCreatePerson_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtWeight_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableButtons_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableButtons2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

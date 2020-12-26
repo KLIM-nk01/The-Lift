@@ -2,13 +2,15 @@
 using LiftModel;
 using System.Threading;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace TheLift
 {
     public class LiftPresenter : IPersonCreatable
     {
         public Lift OurLift;
-        
+      //  public Lift OurLift2;
+       
         private FrmLift View;
 
         Thread MovingLift, TimerThread;
@@ -31,10 +33,12 @@ namespace TheLift
             View.button3.Click += TimePerFloor_Click; 
             View.button4.Click += BtnTrevoga;
             View.TableButtons.Click += TableButtons_Click;
+           // View.TableButtons2.Click += TableButtons_Click;
             View.FormClosing += View_FormClosing;
             //View.btnGo.Click += BtnGo_Click;
 
         }
+
 
         private void TableButtons_Click(object sender, EventArgs e)//стата
         {
@@ -42,6 +46,7 @@ namespace TheLift
             RefreshButtons();
           
         }
+       
 
         private void TimePerFloor_Click(object sender, EventArgs e)
         {
@@ -87,21 +92,44 @@ namespace TheLift
 
             if (dr == DialogResult.Yes)
             {
+               
                 this.OurLift = fcr.NewLift;
+               // this.OurLift2 = fcr.NewLift2;
                 fcr.Close();
 
                 View.nudCurrentFloor.Maximum = OurLift.Floors;
                 View.nudTargetFloor.Maximum = OurLift.Floors;
 
                 View.txtCurrentFloor.Text = OurLift.CurrentFloor.ToString();
-
+               // View.textBox2.Text = OurLift2.CurrentFloor.ToString();
                 RefreshButtons();
             }
         }
         private void BtnTrevoga(object sender, EventArgs e)
         {
-            Dialogs.FormTrevoga f = new Dialogs.FormTrevoga();
-            f.ShowDialog();
+            //Dialogs.FormTrevoga f = new Dialogs.FormTrevoga();
+            //f.ShowDialog();
+            if (OurLift != null)
+            {
+                View.Trevoga++;
+                View.Trevoga %= 2;
+                if (View.Trevoga == 1)
+                {
+                    View.button4.Text = "Остановить тревогу";
+                    OurLift.trevoga = 1;
+                    OurLift.Queue.Clear();
+                    OurLift.Pessengers.Clear();
+                    OurLift.RefreshLiftButtons();
+                }
+                else
+                {
+                    View.button4.Text = "Пожарная тревога";
+                    OurLift.trevoga = 0;
+                }
+            }
+            else { MessageBox.Show("Необходимо создать лифт.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+
         }
 
         private void View_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
@@ -145,10 +173,17 @@ namespace TheLift
         {
             while (View.IsActive)
             {
+                if (OurLift.trevoga == 1 && OurLift.CurrentFloor != 1)
+                {
+                    OurLift.Move();
+                    Thread.Sleep(OurLift.GetTimeMoving());//на 1 сек
+
+                    Refresh();
+                }
                 if (OurLift.ActiveUsers > 0)
                 {
                     OurLift.Move();
-                    Thread.Sleep(OurLift.GetTimeMoving());//на 5 сек
+                    Thread.Sleep(OurLift.GetTimeMoving());//на 1 сек
 
                     Refresh();
                 }
@@ -175,6 +210,7 @@ namespace TheLift
             CheckVorotWeight(Weight);
             Person person = new Person(StartFloor, TargetFloor, Weight);
             OurLift.AddToQueue(person);
+          //  OurLift2.AddToQueue(person);
         }
 
         public void CheckVorotWeight(int w)
@@ -184,6 +220,7 @@ namespace TheLift
 
         public void RefreshQueue()// обновление элементов управления
         {
+           
             View.lbQueue.Items.Clear();
             View.lbQueue.DisplayMember = "Info";
             foreach(Person pe in OurLift.Queue)
@@ -195,14 +232,27 @@ namespace TheLift
         public void RefreshButtons()
         {
             View.TableButtons.Items.Clear();
+          //  View.TableButtons2.Items.Clear();
             foreach (LiftButton btn in OurLift.Buttons)
             {
                 View.TableButtons.Items.Add(btn.Number.ToString(), btn.IsActive);
+
             }
+            //foreach (LiftButton btn in OurLift2.Buttons)
+            //{
+            //    View.TableButtons2.Items.Add(btn.Number.ToString(), btn.IsActive);
+
+            //}
         }
 
         public void RefreshPessengers()
         {
+            if (OurLift.trevoga == 1)
+            {
+                View.lbPessengers.Items.Clear();
+                View.lbPessengers.Items.Add("ТРЕВОГА!!!");
+                return;
+            }
             View.lbPessengers.Items.Clear();
             View.lbPessengers.DisplayMember = "Info";
             foreach (Person pe in OurLift.Pessengers)
@@ -239,8 +289,8 @@ namespace TheLift
         public void RefreshTimer()
         {
             while (View.IsActive) { 
-            //я комментOurLift.TimerUpdate();
-           //я коммент View.timerLabel.Text = "Время работы: " + OurLift.CurrentMin.ToString() + " мин " + OurLift.CurrentSec.ToString() + " сек";
+            OurLift.TimerUpdate();
+            View.timerLabel.Text = "Время работы: " + OurLift.CurrentMin.ToString() + " мин " + OurLift.CurrentSec.ToString() + " сек";
                 Thread.Sleep(1000);
         }
         }
